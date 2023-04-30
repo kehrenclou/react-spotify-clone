@@ -5,31 +5,29 @@
 
 /* --------------------------------- imports -------------------------------- */
 import React, { useContext } from "react";
+import { MusicPlayerContext } from "../context/MusicPlayerContext";//this is before reconfig
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; //new items
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons"; //new items
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";//new items
+import {faPlay,faPause} from "@fortawesome/free-solid-svg-icons";//new items
 
-import useMusicPlayer from "../hooks/useMusicPlayer"; //new items
+import useMusicPlayer from "../hooks/useMusicPlayer";//new items
 /* -------------------------------- TrackList ------------------------------- */
 const TrackList = () => {
-  const { trackList, currentTrackName, playTrack, isPlaying } =
-    useMusicPlayer();
+    //see after reconfig with new hook this is before
+  const [state, setState] = useContext(MusicPlayerContext);
 
   return (
     <>
-      {trackList.map((track, index) => (
+      {state.tracks.map((track) => (
         <div className="box">
-          <button className="button" onClick={() => playTrack(index)}>
-            {currentTrackName === track.name && isPlaying ? (
-              <FontAwesomeIcon icon={faPause} />
-            ) : (
-              <FontAwesomeIcon icon={faPlay} />
-            )}
-          </button>
           <div className="song-title">{track.name}</div>
         </div>
       ))}
-      
+      <button className="button is-primary is-medium is-outlined"
+        onClick={() => setState((state) => ({ ...state, name: "Clicked!" }))}
+      >
+        {state.name}
+      </button>
     </>
   );
 };

@@ -1,4 +1,3 @@
-
 //context is an array with 2 values,
 //an empty object and an empty function as initial value
 
@@ -6,18 +5,15 @@
 //(why an array with empty object and funtion was passed into context)
 
 //to access Context state, import into component and use useContext
-  //multiple values there name the variable state
+//multiple values there name the variable state
 /* --------------------------------- imports -------------------------------- */
 import React, { useState } from "react";
 
 /* --------------------------- MusicPlayerContext --------------------------- */
 
-
 const MusicPlayerContext = React.createContext([{}, () => {}]);
 
-
 const MusicPlayerProvider = (props) => {
-
   const [state, setState] = useState({
     tracks: [
       {
@@ -30,6 +26,8 @@ const MusicPlayerProvider = (props) => {
         name: "Tobu - Such Fun",
       },
     ],
+    currentTrackIndex: null,
+    isPlaying: false,
   });
   return (
     <MusicPlayerContext.Provider value={[state, setState]}>
