@@ -18,6 +18,7 @@ const MusicPlayerContext = React.createContext([{}, () => {}]);
 
 const MusicPlayerProvider = (props) => {
   const [state, setState] = useState({
+    audioPlayer: new Audio(),
     tracks: [
       {
         name: "Downtown - Benjamin Tissot",
