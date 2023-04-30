@@ -8,6 +8,9 @@
 //multiple values there name the variable state
 /* --------------------------------- imports -------------------------------- */
 import React, { useState } from "react";
+import Downtown from "../mp3s/downtown.mp3";
+import Cute from "../mp3s/cute.mp3";
+import Psychedelic from "../mp3s/psychedelic.mp3";
 
 /* --------------------------- MusicPlayerContext --------------------------- */
 
@@ -17,13 +20,22 @@ const MusicPlayerProvider = (props) => {
   const [state, setState] = useState({
     tracks: [
       {
-        name: "Lost Chameleon - Genesis",
+        name: "Downtown - Benjamin Tissot",
+        file: Downtown,
+        attribution: "Music: Bensound.com/free-music-for-videos",
+        licensecode: "ATKS5ENRBVQ1PQID",
       },
       {
-        name: "The Hipsta - Shaken Soda",
+        name: "Cute - Benjamin Tissot",
+        file: Cute,
+        attribution:"Music I Use: https://www.bensound.com/free-music-for-videos",
+        licensecode: "LKTSSRLPLVXUVY8I",
       },
       {
-        name: "Tobu - Such Fun",
+        name: "Psychedelic - Benjamin Tissot",
+        file: Psychedelic,
+        attribution: "Music I use: Bensound",
+        licensecode: "FPZL95F7X8XU01CQ",
       },
     ],
     currentTrackIndex: null,

@@ -1,5 +1,5 @@
 /* --------------------------------- imports -------------------------------- */
-import Ract from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPause,
@@ -10,7 +10,7 @@ import {
 
 import useMusicPlayer from "../hooks/useMusicPlayer";
 /* -------------------------------- controls -------------------------------- */
-
+//note that marquee is depreciated - need to be updated
 const PlayerControls = () => {
   const {
     isPlaying,
